@@ -1,2 +1,2 @@
-# Random Forest in a federated learning framework - Application for intrusion detection
+# Random Forest in a Federated Learning framework - Application for intrusion detection
 
