@@ -9,6 +9,34 @@ The main idea of the framework is to train independent Random Forests (RFs) on c
 </br>
 </br>
 
+Data: <a href="https://www.unb.ca/cic/datasets/nsl.html">KDD</a>, <a href="https://www.unb.ca/cic/datasets/nsl.html">NSL-KDD</a>, <a href="https://research.unsw.edu.au/projects/unsw-nb15-dataset">UNSW-NB15</a>, <a href="https://www.unb.ca/cic/datasets/ids-2017.html">CIC-IDS-2017</a>
+
+Programming language: Python
+
+Required libraries: <a href="https://scikit-learn.org/stable/">scikit-learn</a>, <a href="https://github.com/IBM/differential-privacy-library">IBM differential privacy library</a>
+
+<b>Datasets pre-processing:</b>
+
+A certain part from each dataset is selected to be used for the experiments.
+
+The original features were pre-processed depending on their type:
+   <ul>
+         <li> Numeric features - normalized to a range between 0 and 1 using min/max approach.</li>
+          <li>  Categorical features - one-hot encoded.  </li> 
+          <li> Binary features - not changed.  </li>
+           <li> Output label - encoded into the numerical values for attack classification, while for attack detection normal instances were labeled with 0 and all the others with 1  </li>
+   </ul>
+   
+The datasets were divided into the training set, validation set, and testing set with a 70\%-10\%-20\% distribution, and then split into subsets using one of the features as a division criteria for an federated learning setup: 
+   <ul>
+     <li>KDD: protocol </li>
+     <li> NSL-KDD: protocol </li>
+      <li> UNSW-NB15: service </li>
+           <li>  CIC-IDS-2017: destination port </li>
+   </ul>
+
+Files for data pre-processing are available in <i> data </i> folder, as well as pre-processed files except for CIC-IDS-2017 due to file size limit.
+
 <b>Four different experiments can be found in this repository:</b>
 <ul>
   <li> <b>Experiment 1 - Selection of RF hyper-parameters:</b> The experiment was conducted before splitting the datasets into subsets, with the goal of finding the best combination of RF hyper-parameters for a specific dataset and specific problem. Hyper-parameters that were tested include the number of Decision Trees (DTs) (odd numbers between 1 and 100), splitting rule (gini or entropy), and ensemble method (SV or WV). The best combination of hyper-parameters that was discovered in this experiment was used as the RF setup for all subsequent experiments for the specific problem on a specific dataset. File: <i> Experiment1.ipynb </i></li>
@@ -19,16 +47,10 @@ The main idea of the framework is to train independent Random Forests (RFs) on c
           <li> Experiment 2.3 - Subsets obtained using random division of data among clients, such that each client gets the same amount of data as in the Experiment 2.1.</li>
     </ul>
     File: <i> Experiment2.ipynb </i>
-  <li> <b>Experiment 3 -  Global RF based on Federated Learning: </b> Independent RFs were combined into a global one using four different merging methods RF\_S\_DTs\_A, RF\_S\_DTs\_WA, RF\_S\_DTs\_A\_All, RF\_S\_DTs\_WA\_All (check the <a href="https://drive.google.com/file/d/1E0BgUdOfqnj9UOrbwW4kRcRex4EFntNa/view"> reference </a> for detailed explanation) and varying number of DTs. The global RF was tested on the entire testing set and the performances of global RF were compared with the performances of independent RFs on the entire testing set. Files: <i> Experiment3.ipynb, Experiment3ResultsCSV</i></li>
+  <li> <b>Experiment 3 -  Global RF based on Federated Learning: </b> Independent RFs were combined into a global one using four different merging methods RF_S_DTs_A, RF_S_DTs_WA, RF_S_DTs_A_All, RF_S_DTs_WA_All (check the <a href="https://drive.google.com/file/d/1E0BgUdOfqnj9UOrbwW4kRcRex4EFntNa/view"> reference </a> for detailed explanation) and varying number of DTs. The global RF was tested on the entire testing set and the performances of global RF were compared with the performances of independent RFs on the entire testing set. Files: <i> Experiment3.ipynb, Experiment3ResultsCSV</i></li>
   <li>  <b>Experiment 4 -  Global RF with differential privacy based on Federated Learning: </b> Independent RF with DP was trained for each client on data from its subset (with respect to the division criteria) and tested on the entire testing set. Four different values of  &epsilon; parameter were tested: 0.1, 0.5, 1 and 5. After that, the 
     independent RFs were combined into a global one using the combination of the merging method and the number of DTs that had the best performance in Experiment 3 for the specific problem in the specific data set.     The global RF was tested on the entire testing set and the results and performances of global RF were compared with the performances of independent RFs with differential privacy.  Files: <i> Experiment2DP.ipynb, Experiment3DP.ipynb  </i>
 </ul>
-
-Data: <a href="https://www.unb.ca/cic/datasets/nsl.html">KDD</a>, <a href="https://www.unb.ca/cic/datasets/nsl.html">NSL-KDD</a>, <a href="https://research.unsw.edu.au/projects/unsw-nb15-dataset">UNSW-NB15</a>, <a href="https://www.unb.ca/cic/datasets/ids-2017.html">CIC-IDS-2017</a>
-
-Programming language: Python
-
-Required libraries: <a href="https://scikit-learn.org/stable/">scikit-learn</a>, <a href="https://github.com/IBM/differential-privacy-library">IBM differential privacy library</a>
 
 
 Citations:
