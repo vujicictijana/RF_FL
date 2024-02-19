@@ -18,7 +18,7 @@ The main idea of the framework is to train independent Random Forests (RFs) on c
           <li> Experiment 2.2 - Subsets obtained using random division of data among clients, such that each client gets the same amount of data.  </li>
           <li> Experiment 2.3 - Subsets obtained using random division of data among clients, such that each client gets the same amount of data as in the Experiment 2.1.</li>
     </ul>
-  <li>Milk</li>
+  <li> <b>Experiment 3 -  Global RF based on Federated Learning: </b> Independent RFs were combined into a global one using four different merging methods RF\_S\_DTs\_A, RF\_S\_DTs\_WA, RF\_S\_DTs\_A\_All, RF\_S\_DTs\_WA\_All (check the <a href="https://drive.google.com/file/d/1E0BgUdOfqnj9UOrbwW4kRcRex4EFntNa/view"> reference </a> for detailed explanation) and varying number of DTs. The global RF was tested on the entire testing set and the performances of global RF were compared with the performances of independent RFs on the entire testing set.</li>
 </ul>
 
 Data: <a href="https://www.unb.ca/cic/datasets/nsl.html">KDD</a>, <a href="https://www.unb.ca/cic/datasets/nsl.html">NSL-KDD</a>, <a href="https://research.unsw.edu.au/projects/unsw-nb15-dataset">UNSW-NB15</a>, <a href="https://www.unb.ca/cic/datasets/ids-2017.html">CIC-IDS-2017</a>
@@ -30,5 +30,5 @@ Required libraries: <a href="https://scikit-learn.org/stable/">scikit-learn</a>,
 
 Citations:
 
-Markovic, T., Leon, M., Buffoni, D., & Punnekkat, S. (2022, June). Random forest based on federated learning for intrusion detection. In IFIP International Conference on Artificial Intelligence Applications and Innovations (pp. 132-144). Cham: Springer International Publishing.
+Markovic, T., Leon, M., Buffoni, D., & Punnekkat, S. (2022, June). <a href="https://drive.google.com/file/d/1E0BgUdOfqnj9UOrbwW4kRcRex4EFntNa/view">Random forest based on federated learning for intrusion detection.</a> In IFIP International Conference on Artificial Intelligence Applications and Innovations (pp. 132-144). Cham: Springer International Publishing.
 
