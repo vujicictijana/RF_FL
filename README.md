@@ -55,7 +55,7 @@ Files for data pre-processing are available in <i> data </i> folder, as well as 
 
 Citations:
 
-Markovic, T., Leon, M., Buffoni, D., & Punnekkat, S. (2022, June). <a href="https://drive.google.com/file/d/1E0BgUdOfqnj9UOrbwW4kRcRex4EFntNa/view">Random forest based on federated learning for intrusion detection.</a> In IFIP International Conference on Artificial Intelligence Applications and Innovations (pp. 132-144). Cham: Springer International Publishing.
+Markovic, T., Leon, M., Buffoni, D., & Punnekkat, S. (2022, June). <a href="https://link.springer.com/chapter/10.1007/978-3-031-08333-4_11">Random forest based on federated learning for intrusion detection.</a> In IFIP International Conference on Artificial Intelligence Applications and Innovations (pp. 132-144). Cham: Springer International Publishing.
 
 Markovic, T., Leon, M., Buffoni, D., & Punnekkat, S. (2024). <a href="https://link.springer.com/article/10.1007/s10489-024-05589-6">Random forest with differential privacy in federated learning framework for network attack detection and classification</a>. Applied Intelligence, 1-22.
 
